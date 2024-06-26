@@ -31,7 +31,7 @@ const LinksContainer = styled.div`
   flex-direction: column;
   gap: 2.5rem;
   position: fixed;
-  margin-top: 10rem;
+  margin-top: 15.8rem;
   left: 0;
   border-top-right-radius: 1.2rem;
   border-bottom-right-radius: 1.2rem;

@@ -17,10 +17,12 @@ const HeaderContainer = styled.header`
   padding: 2rem;
   display: flex;
   justify-content: space-between;
-  position: sticky;
-  z-index: 1;
+  position: fixed;
   top: 0;
   width: 100%;
+  @media only screen and (max-width: 45rem) {
+    justify-content: center;
+  }
 `;
 const HeaderDropdown = styled.div`
   display: flex;
@@ -30,7 +32,7 @@ const HeaderDropdown = styled.div`
     display: none;
   }
 `;
-const HeaderName = styled.h1`
+export const HeaderName = styled.h1`
   font-family: "Teko", sans-serif;
   font-weight: 700;
   color: #ff6600;
