@@ -12,7 +12,7 @@ function Intro() {
         </HeaderName>
         <ProfessionTypography>Software Developer</ProfessionTypography>
         <DescTypography>Expertise in Web Technologies</DescTypography>
-        <ContactMeButton>Contact Me</ContactMeButton>
+        <ContactMeButton>Learn More</ContactMeButton>
       </div>
     </IntroContainer>
   );
