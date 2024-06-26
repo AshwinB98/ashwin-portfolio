@@ -1,7 +1,13 @@
+import Header from "./components/Header";
+import SocialLinks from "./components/SocialLinks";
+
 function App() {
   return (
     <>
-      <div>Hello World</div>
+      <Header />
+      <div>
+        <SocialLinks />
+      </div>
     </>
   );
 }

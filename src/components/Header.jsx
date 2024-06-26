@@ -17,6 +17,10 @@ const HeaderContainer = styled.header`
   padding: 2rem;
   display: flex;
   justify-content: space-between;
+  position: sticky;
+  z-index: 1;
+  top: 0;
+  width: 100%;
 `;
 const HeaderDropdown = styled.div`
   display: flex;

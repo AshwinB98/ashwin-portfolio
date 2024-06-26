@@ -20,6 +20,10 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+a {
+  color: #ffffff;
+}
+
 /*
   6. Improve media defaults
 */
