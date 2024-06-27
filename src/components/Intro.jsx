@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { HeaderName } from "./Header";
 
-function Intro() {
+function Intro({ onClickAbout }) {
   return (
     <IntroContainer>
       <div style={{ padding: "1.4rem" }}>
@@ -12,7 +12,7 @@ function Intro() {
         </HeaderName>
         <ProfessionTypography>Software Developer</ProfessionTypography>
         <DescTypography>Expertise in Web Technologies</DescTypography>
-        <ContactMeButton>Learn More</ContactMeButton>
+        <ContactMeButton onClick={onClickAbout}>Learn More</ContactMeButton>
       </div>
     </IntroContainer>
   );
@@ -38,7 +38,7 @@ const DescTypography = styled.h4`
   font-size: x-large;
 `;
 
-const ContactMeButton = styled.button`
+export const ContactMeButton = styled.button`
   margin-top: 3.2rem;
   background-color: #ff6600;
   padding: 1rem 2rem;

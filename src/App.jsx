@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import styled from "styled-components";
 import AboutMe from "./components/AboutMe";
 import Header from "./components/Header";
@@ -6,18 +7,27 @@ import Projects from "./components/Projects";
 import SocialLinks from "./components/SocialLinks";
 
 function App() {
+  const aboutRef = useRef();
+  const projectRef = useRef();
+  const onClick = (ref) => {
+    ref.current.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <>
-      <Header />
+      <Header
+        onClickAbout={() => onClick(aboutRef)}
+        onClickProject={() => onClick(projectRef)}
+      />
       <SocialLinks />
       <PagesWrapper>
         <Wrapper>
-          <Intro />
+          <Intro onClickAbout={() => onClick(aboutRef)} />
         </Wrapper>
-        <Wrapper>
+        <Wrapper ref={aboutRef}>
           <AboutMe />
         </Wrapper>
-        <Wrapper>
+        <Wrapper ref={projectRef}>
           <Projects />
         </Wrapper>
       </PagesWrapper>

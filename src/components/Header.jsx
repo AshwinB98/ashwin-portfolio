@@ -1,14 +1,14 @@
 import styled from "styled-components";
 
-function Header() {
+function Header({ onClickAbout, onClickProject }) {
   return (
     <HeaderContainer>
       <HeaderName>
         <span>&#123; A &#125;</span> PORTFOLIO
       </HeaderName>
       <HeaderDropdown>
-        <p>ABOUT</p>
-        <p>PROJECTS</p>
+        <Links onClick={onClickAbout}>ABOUT</Links>
+        <Links onClick={onClickProject}>PROJECTS</Links>
       </HeaderDropdown>
     </HeaderContainer>
   );
@@ -22,6 +22,14 @@ const HeaderContainer = styled.header`
   width: 100%;
   @media only screen and (max-width: 45rem) {
     justify-content: center;
+  }
+`;
+
+const Links = styled.p`
+  cursor: pointer;
+  &:hover {
+    border-bottom: 2px solid #ff6600;
+    padding-bottom: 1px;
   }
 `;
 const HeaderDropdown = styled.div`
