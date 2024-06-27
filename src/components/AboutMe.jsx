@@ -15,32 +15,53 @@ import {
   TimelineContent,
   TimelineDot,
   TimelineItem,
+  TimelineOppositeContent,
   TimelineSeparator,
 } from "@mui/lab";
+import { Typography } from "@mui/material";
 import { HeaderName } from "./Header";
+
 function AboutMe() {
-  const timeLineDesc = ["eat", "sleep", "repeat"];
+  const timeLineDesc = [
+    {
+      year: 2020,
+      desc: "Started my journey as intern in MountBlue Technologies",
+    },
+    {
+      year: 2021,
+      desc: "Software Developer at MountBlue Technologies",
+    },
+    {
+      year: 2022,
+      desc: "Software Development Engineer at Airmeet",
+    },
+  ];
   return (
     <>
       <TitleTypography>ABOUT ME</TitleTypography>
-      <p style={{ marginTop: "1rem", fontSize: "1.2rem" }}>
+      <AboutDescription>
         Greetings, fellow web enthusiasts! I&apos;m Ashwin, a software developer
         who thrives on building beautiful and functional web experiences. Over
         the past 3 years, I&apos;ve leveled up my skills in ReactJS and
         discovered a deep love for creating reusable components with visually
         beautiful UI/UX. When I&apos;m not coding, you&apos;ll probably find me
         playing Souls-like games.
-      </p>
+      </AboutDescription>
       <div style={{ marginTop: "1rem" }}>
         <h2>JOURNEY SO FAR</h2>
         <Timeline position="alternate" direction="horizontal">
-          {timeLineDesc.map((desc, idx) => (
+          {timeLineDesc.map((timeline, idx) => (
             <TimelineItem key={idx}>
+              <TimelineOppositeContent>
+                <Typography color={"#ff6600"} fontSize={24} fontWeight={700}>
+                  {timeline.year}
+                </Typography>
+              </TimelineOppositeContent>
               <TimelineSeparator>
                 <TimelineDot color="warning" />
                 <TimelineConnector />
               </TimelineSeparator>
-              <TimelineContent>{desc}</TimelineContent>
+              <TimelineContent>{timeline.desc}</TimelineContent>
             </TimelineItem>
           ))}
         </Timeline>
@@ -70,14 +91,29 @@ export const TitleTypography = styled(HeaderName)`
   border-bottom: 8px solid #ff6600;
   display: inline-block;
   color: black;
+  @media only screen and (max-width: 45rem) {
+    font-size: 2rem;
+  }
 `;
 
 const LogoContainer = styled.div`
   display: flex;
-  overflow-x: scroll;
+  overflow: scroll;
+  flex-wrap: wrap;
   margin-top: 1rem;
-  gap: 4.2rem;
+  justify-content: space-between;
   width: 100%;
+  @media only screen and (max-width: 45rem) {
+    gap: 1.2rem;
+  }
+`;
+
+const AboutDescription = styled.p`
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  @media only screen and (max-width: 45rem) {
+    font-size: 1rem;
+  }
 `;
 
 export default AboutMe;

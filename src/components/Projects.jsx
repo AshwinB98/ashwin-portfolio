@@ -80,19 +80,28 @@ const CardContainer = styled.div`
   border-radius: 8px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
   margin-top: 1.25rem;
-  width: 18.75rem;
+  min-width: 18.75rem;
+  @media only screen and (max-width: 45rem) {
+    min-width: 100%;
+  }
 `;
 
 const CardsContainer = styled.div`
   display: flex;
   justify-content: space-around;
+  overflow: scroll;
+  padding-bottom: 1rem;
+  @media only screen and (max-width: 45rem) {
+    gap: 2rem;
+    padding: 1rem 1rem 1rem 0.5rem;
+  }
 `;
 
 const CardImage = styled.img`
   padding: 0.5rem;
   width: 100%;
   height: 200px;
-  object-fit: cover; /* Ensures image fills container */
+  object-fit: cover;
   border-radius: 8px;
 `;
 
@@ -107,11 +116,16 @@ const CardDescription = styled.p`
 
 const ContactContainer = styled.div`
   margin-top: 4rem;
-
   display: flex;
   gap: 4rem;
   align-items: center;
   justify-content: center;
+  @media only screen and (max-width: 45rem) {
+    flex-direction: column;
+    align-items: start;
+    gap: 1rem;
+    padding-bottom: 3rem;
+  }
 `;
 
 export default Projects;

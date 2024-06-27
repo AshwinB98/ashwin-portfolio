@@ -19,7 +19,11 @@ function App() {
         onClickAbout={() => onClick(aboutRef)}
         onClickProject={() => onClick(projectRef)}
       />
-      <SocialLinks />
+      <SocialContainer>
+        <LinksContainer>
+          <SocialLinks color={"white"} />
+        </LinksContainer>
+      </SocialContainer>
       <PagesWrapper>
         <Wrapper>
           <Intro onClickAbout={() => onClick(aboutRef)} />
@@ -41,6 +45,12 @@ const Wrapper = styled.div`
   padding: 7rem;
   scroll-behavior: smooth;
   scroll-snap-align: start;
+  @media only screen and (max-width: 45rem) {
+    padding: 4rem 2rem 0rem 2rem;
+    height: fit-content;
+    scroll-behavior: none;
+    scroll-snap-align: none;
+  }
 `;
 
 const PagesWrapper = styled.div`
@@ -49,4 +59,24 @@ const PagesWrapper = styled.div`
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
 `;
+
+const SocialContainer = styled.div`
+  @media only screen and (max-width: 45rem) {
+    display: none;
+  }
+`;
+
+const LinksContainer = styled.div`
+  background-color: #ff6600;
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  position: fixed;
+  margin-top: 15.8rem;
+  left: 0;
+  border-top-right-radius: 1.2rem;
+  border-bottom-right-radius: 1.2rem;
+`;
+
 export default App;

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import SocialLinks from "./SocialLinks";
 
 function Header({ onClickAbout, onClickProject }) {
   return (
@@ -10,6 +11,9 @@ function Header({ onClickAbout, onClickProject }) {
         <Links onClick={onClickAbout}>ABOUT</Links>
         <Links onClick={onClickProject}>PROJECTS</Links>
       </HeaderDropdown>
+      <MobileSocialContainer>
+        <SocialLinks color={"#ff6600"} />
+      </MobileSocialContainer>
     </HeaderContainer>
   );
 }
@@ -20,8 +24,22 @@ const HeaderContainer = styled.header`
   position: fixed;
   top: 0;
   width: 100%;
-  @media only screen and (max-width: 45rem) {
+  background-image: linear-gradient(
+    to top,
+    rgba(255, 0, 0, 0),
+    rgba(255, 255, 255, 1)
+  );
+  /* @media only screen and (max-width: 45rem) {
     justify-content: center;
+  } */
+`;
+
+const MobileSocialContainer = styled.div`
+  display: none;
+  @media only screen and (max-width: 45rem) {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
   }
 `;
 
