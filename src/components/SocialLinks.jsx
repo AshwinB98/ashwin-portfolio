@@ -3,6 +3,7 @@ import {
   GitHubLogoIcon,
   LinkedInLogoIcon,
 } from "@radix-ui/react-icons";
+import ashwinResume from "../assets/resume.pdf";
 
 function SocialLinks({ color }) {
   return (
@@ -16,7 +17,7 @@ function SocialLinks({ color }) {
       <a href="https://github.com/AshwinB98" target="_blank">
         <GitHubLogoIcon color={color} height={28} width={28} />
       </a>
-      <a href="">
+      <a href={ashwinResume} download>
         <DownloadIcon color={color} height={28} width={28} />
       </a>
     </>
